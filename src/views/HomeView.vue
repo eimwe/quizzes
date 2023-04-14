@@ -19,7 +19,12 @@ import TheWelcome from '../components/TheWelcome.vue'
         <h1 class="page-header__title">
           Quizzes
         </h1>
-        <form action="#" class="search" method="GET">
+        <form
+          class="search"
+          @submit.prevent="$event.preventDefault()"
+          action="#"
+          method="GET"
+        >
           <input class="search__bar" v-model.trim="searchQuery" type="search" name="search" placeholder="Search">
         </form>
       </div>
