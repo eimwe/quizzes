@@ -5,10 +5,12 @@
   --fs-h1: 1.5rem;       // 24px
   --fs-h2: 1.25rem;     // 20px
   --fs-content: 1rem;  // 16px
+  --fs-small: .875rem;// 14px
 
   // line-height
   --lead-content: 1.2;
   --lead-intro: 1.3;
+  --lead-small: 1;
 
   // letter-spacing
   --track-content: .2px;
@@ -18,5 +20,25 @@
   /* Colors */
 
   // text color
-  --clr-content: hsl(0 0 20%);
+  --clr-blue: hsl(231 41% 43%);
+  --clr-blue-softened: hsl(231 41% 43% / 0.2);
+  --clr-orange: hsl(29 81% 41% / 0.2);
+  --clr-content: hsl(0 0% 20%);
+  --clr-shadow: hsl(0 0% 0% / 0.1);
+
+  // background color
+  --bg-search: hsl(0 0% 95%);
+
+  /* Shadows */
+  --shadow: 4px 4px 8px 2px var(--clr-shadow);
+
+
+  /* Shapes */
+
+  // border radius
+  --br-rounded: 4px;
+
+  
+  /* Timing */
+  --delay: 300ms;
 }
