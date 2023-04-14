@@ -1,10 +1,15 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
   import q from '../data/quizzes.json'
   import coverImage from '../assets/images/no-cover.jpg';
 
   const quizzes = ref(q);
+  const searchQuery = ref('');
+
+  const filteredCards = computed(() => {
+    return quizzes.value = q.filter(quiz => quiz.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  });
 </script>
 
 <template>
@@ -15,7 +20,7 @@ import TheWelcome from '../components/TheWelcome.vue'
           Quizzes
         </h1>
         <form action="#" class="search" method="GET">
-          <input class="search__bar" type="search" name="search" placeholder="Search">
+          <input class="search__bar" v-model.trim="searchQuery" type="search" name="search" placeholder="Search">
         </form>
       </div>
     </div>
@@ -23,7 +28,7 @@ import TheWelcome from '../components/TheWelcome.vue'
   <main class="cards">
     <div class="container">
       <div class="cards__container">
-        <article class="card" v-for="quiz in quizzes" :key="quiz.id">
+        <article class="card" v-for="quiz in filteredCards" :key="quiz.id">
           <div class="card__image-container">
             <img class="card__image" :src="quiz.img.length ? quiz.img : coverImage" :alt="quiz.name">
           </div>
