@@ -1,0 +1,39 @@
+.card {
+  border-radius: var(--br-rounded);
+  box-shadow: none;
+  transition: box-shadow var(--delay);
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+
+  &__image-container {
+    height: 35vh;
+  }
+
+  &__image {
+    width: 100%;
+    height: inherit;
+    border-start-start-radius: var(--br-rounded);
+    border-start-end-radius: var(--br-rounded);
+    object-fit: cover;
+  }
+
+  &__info {
+    padding: 1em;
+  }
+
+  &__title {
+    margin: 0;
+    margin-block-end: .5em;
+    font-size: var(--fs-h2);
+    font-weight: 500;
+    line-height: var(--lead-intro);
+    letter-spacing: var(--track-intro);
+  }
+
+  &__note {
+    font-size: var(--fs-small);
+    font-weight: 300;
+  }
+}
