@@ -1,0 +1,17 @@
+.search {
+
+  &__bar {
+    padding: .5em;
+    border-radius: var(--br-rounded);
+    font-size: var(--fs-small);
+    line-height: var(--lead-small);
+    color: var(--clr-grey);
+    background-color: var(--bg-search);
+    outline-color: transparent;
+    transition: outline-color var(--delay);
+
+    &:focus {
+      outline-color: var(--clr-blue);
+    }
+  }
+}
