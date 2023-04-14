@@ -2,13 +2,14 @@
   border-radius: var(--br-rounded);
   box-shadow: none;
   transition: box-shadow var(--delay);
+  cursor: pointer;
 
   &:hover {
     box-shadow: var(--shadow);
   }
 
   &__image-container {
-    height: 35vh;
+    height: 30vh;
   }
 
   &__image {
