@@ -1,5 +1,10 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
+  import { ref } from 'vue';
+  import q from '../data/quizzes.json'
+  import coverImage from '../assets/images/no-cover.jpg';
+
+  const quizzes = ref(q);
 </script>
 
 <template>
@@ -18,22 +23,13 @@ import TheWelcome from '../components/TheWelcome.vue'
   <main class="cards">
     <div class="container">
       <div class="cards__container">
-        <article class="card">
+        <article class="card" v-for="quiz in quizzes" :key="quiz.id">
           <div class="card__image-container">
-            <img class="card__image" src="../assets/images/no-cover.jpg" alt="">
+            <img class="card__image" :src="quiz.img.length ? quiz.img : coverImage" :alt="quiz.name">
           </div>
           <div class="card__info">
-            <h2 class="card__title">Quiz category</h2>
-            <span class="card__note">Number of questions</span>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image-container">
-            <img class="card__image" src="../assets/images/no-cover.jpg" alt="">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Quiz category</h2>
-            <span class="card__note">Number of questions</span>
+            <h2 class="card__title">{{ quiz.name }}</h2>
+            <span class="card__note">{{ quiz.questions.length }} questions</span>
           </div>
         </article>
       </div>
