@@ -1,5 +1,4 @@
 <script setup>
-  import { defineProps } from 'vue';
   import coverImage from '../assets/images/no-cover.jpg';
 
   const { filteredCards } = defineProps(['filteredCards']);
