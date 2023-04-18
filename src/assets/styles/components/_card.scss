@@ -1,8 +1,9 @@
 .card {
   border-radius: var(--br-rounded);
+  color: inherit;
+  text-decoration: none;
   box-shadow: none;
   transition: box-shadow var(--delay);
-  cursor: pointer;
 
   &:hover {
     box-shadow: var(--shadow);
