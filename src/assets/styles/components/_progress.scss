@@ -1,0 +1,18 @@
+.progress {
+  min-height: 22px;
+  border: 2px solid var(--clr-orange);
+  border-radius: unset;
+  background-color: transparent;
+
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--clr-orange);
+  }
+
+  &::-moz-progress-bar {
+    background-color: var(--clr-orange);
+  }
+}
