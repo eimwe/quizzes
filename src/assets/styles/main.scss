@@ -1,5 +1,6 @@
 @use './abstracts/variables';
 @use './vendors/normalize';
+@use './components/a11y';
 @use './base' as *;
 @use './layout' as *;
 @use './components' as *;
