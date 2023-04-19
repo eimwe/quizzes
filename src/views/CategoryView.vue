@@ -12,9 +12,13 @@
   const quizProgress = computed(() => {
     return `${currentQuestionIndex.value}/${category.questions.length}`;
   });
+
+  const barProgress = computed(() => {
+    return parseInt(`${currentQuestionIndex.value / category.questions.length * 100}`).toFixed();
+  });
 </script>
 
 <template>
-  <QuestionHeader :quizProgress="quizProgress" />
+  <QuestionHeader :quizProgress="quizProgress" :barProgress="barProgress"/>
   <Question :question="category.questions[currentQuestionIndex]"/>
 </template>
