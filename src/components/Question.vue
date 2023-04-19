@@ -2,7 +2,7 @@
   import { defineProps, defineEmits } from 'vue';
 
   const { question } = defineProps(['question']);
-  const emit = defineEmits('selectedOption');
+  const emit = defineEmits(['selectedOption']);
 
   const emitSelectedOption = (isCorrect) => {
     emit('selectedOption', isCorrect);
