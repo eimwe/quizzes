@@ -8,6 +8,7 @@
   const categoryRoute = useRoute();
   const category = quizData.find(category => category.id === parseInt(categoryRoute.params.id));
   const currentQuestionIndex = ref(0);
+  const numberOfCorrectAnswers = ref(0);
 
   const quizProgress = computed(() => {
     return `${currentQuestionIndex.value}/${category.questions.length}`;
@@ -16,9 +17,20 @@
   const barProgress = computed(() => {
     return parseInt(`${currentQuestionIndex.value / category.questions.length * 100}`).toFixed();
   });
+
+  const onOptionSelected = (isCorrect) => {
+    if (isCorrect) {
+      numberOfCorrectAnswers.value++;
+    }
+
+    currentQuestionIndex.value++;
+  }
 </script>
 
 <template>
   <QuestionHeader :quizProgress="quizProgress" :barProgress="barProgress"/>
-  <Question :question="category.questions[currentQuestionIndex]"/>
+  <Question
+    :question="category.questions[currentQuestionIndex]"
+    @selectedOption="onOptionSelected"
+  />
 </template>
