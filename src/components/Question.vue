@@ -1,12 +1,12 @@
 <script setup>
   import { defineProps } from 'vue';
 
-  const { category } = defineProps(['category']);
+  const { question } = defineProps(['question']);
 </script>
 
 <template>
   <main>
-    <dl v-for="question in category.questions" :key="question.id">
+    <dl>
       <dt>{{ question.text }}</dt>
       <dd>
         <ul>
