@@ -1,0 +1,10 @@
+.link {
+  font-size: var(--fs-small);
+  color: var(--clr-blue);
+  text-underline-offset: .25em;
+  transition: text-decoration-color var(--delay);
+
+  &:hover {
+    text-decoration-color: transparent;
+  }
+}

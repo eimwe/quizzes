@@ -1,0 +1,19 @@
+.results {
+  min-height: calc(100vh - 12em);
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  &__intro {
+    margin: 0;
+    margin-block-end: 1em;
+    font-size: var(--fs-h1);
+  }
+
+  &__total {
+    display: block;
+    margin-block-end: .5em;
+    font-size: var(--fs-results);
+    font-weight: 700;
+  }
+}
