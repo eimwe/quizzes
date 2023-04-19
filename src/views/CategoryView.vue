@@ -5,6 +5,7 @@
   import Question from '../components/Question.vue';
   import QuestionHeader from '../components/QuestionHeader.vue';
   import Result from '../components/Result.vue';
+  import NotFound from '../views/404View.vue'
 
   const categoryRoute = useRoute();
   const category = quizData.find(category => category.id === parseInt(categoryRoute.params.id));
@@ -34,15 +35,20 @@
 </script>
 
 <template>
-  <QuestionHeader :quizProgress="quizProgress" :barProgress="barProgress"/>
-  <Question
-    v-if="!showResults"
-    :question="category.questions[currentQuestionIndex]"
-    @selectedOption="onOptionSelected"
-  />
-  <Result
-    v-else
-    :numberOfCorrectAnswers="numberOfCorrectAnswers"
-    :questionsLength="category.questions.length"
-  />
+  <div v-if="category">
+    <QuestionHeader :quizProgress="quizProgress" :barProgress="barProgress"/>
+    <Question
+      v-if="!showResults"
+      :question="category.questions[currentQuestionIndex]"
+      @selectedOption="onOptionSelected"
+    />
+    <Result
+      v-else
+      :numberOfCorrectAnswers="numberOfCorrectAnswers"
+      :questionsLength="category.questions.length"
+    />
+  </div>
+  <div v-else>
+    <NotFound />
+  </div>
 </template>
