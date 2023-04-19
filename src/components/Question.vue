@@ -1,6 +1,4 @@
 <script setup>
-  import { defineProps, defineEmits } from 'vue';
-
   const { question } = defineProps(['question']);
   const emit = defineEmits(['selectedOption']);
 
