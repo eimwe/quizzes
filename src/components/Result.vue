@@ -11,9 +11,11 @@
 </script>
 
 <template>
-  <div class="container">
-    <p>Your results:</p>
-    <strong>{{ numberOfCorrectAnswers }}/{{ questionsLength }}</strong>
-    <RouterLink to="/">Return to the Home page</RouterLink>
-  </div>
+  <main class="results">
+    <div class="container">
+      <p class="results__intro">Your results:</p>
+      <strong class="results__total">{{ numberOfCorrectAnswers }}/{{ questionsLength }}</strong>
+      <RouterLink to="/" class="link">Return to the Home page</RouterLink>
+    </div>
+  </main>
 </template>
