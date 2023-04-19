@@ -1,0 +1,19 @@
+.deadend {
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-block-end: .5em;
+    font-size: var(--fs-results);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .deadend {
+
+    &__image {
+      max-width: 35%;
+      margin-inline: auto;
+    }
+  }
+}
