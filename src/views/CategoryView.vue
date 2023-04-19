@@ -1,6 +1,7 @@
 <script setup>
   import { useRoute } from 'vue-router';
   import quizData from '../data/quizzes.json'
+  import Question from '../components/Question.vue';
 
   const categoryRoute = useRoute();
   const category = quizData.find(category => category.id === parseInt(categoryRoute.params.id));
@@ -18,16 +19,5 @@
       </div>
     </div>
   </header>
-  <main>
-    <dl v-for="question in category.questions" :key="question.id">
-      <dt>{{ question.text }}</dt>
-      <dd>
-        <ul>
-          <li v-for="answer in question.options" :key="answer.id">
-            <span>{{ answer.text }}</span>
-          </li>
-        </ul>
-      </dd>
-    </dl>
-  </main>
+  <Question :category="category"/>
 </template>
