@@ -1,8 +1,9 @@
 <script setup>
   import Card from '../components/Card.vue'
   import { ref, computed } from 'vue';
-  import quizData from '../data/quizzes.json'
+  import loadQuizData from '../api.js';
 
+  const quizData = await loadQuizData();
   const quizzes = ref(quizData);
   const searchQuery = ref('');
 
