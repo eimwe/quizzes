@@ -11,6 +11,7 @@
   const category = loadedQuizData.find(category => category.id === parseInt(categoryRoute.params.id));
   const currentQuestionIndex = ref(0);
   const numberOfCorrectAnswers = ref(0);
+  const numberOfAnswers = ref([]);
   const showResults = ref(false);
 
   const quizProgress = computed(() => {
@@ -21,7 +22,7 @@
     return parseInt(`${currentQuestionIndex.value / category.questions.length * 100}`).toFixed();
   });
 
-  const onOptionSelected = (isCorrect) => {
+  const onOptionSelected = (isCorrect, option) => {
     if (isCorrect) {
       numberOfCorrectAnswers.value++;
     }
@@ -31,6 +32,11 @@
     }
 
     currentQuestionIndex.value++;
+
+    numberOfAnswers.value.push({
+      id: currentQuestionIndex.value,
+      label: option
+    });
   }
 </script>
 
@@ -47,6 +53,7 @@
       :numberOfCorrectAnswers="numberOfCorrectAnswers"
       :questionsLength="category.questions.length"
       :questions="category.questions"
+      :answers="numberOfAnswers"
     />
   </div>
   <div v-else>

@@ -2,8 +2,8 @@
   const { question } = defineProps(['question']);
   const emit = defineEmits(['selectedOption']);
 
-  const emitSelectedOption = (isCorrect) => {
-    emit('selectedOption', isCorrect);
+  const emitSelectedOption = (isCorrect, option) => {
+    emit('selectedOption', isCorrect, option);
   }
 </script>
 
@@ -17,7 +17,7 @@
             <li
               v-for="answer in question.options"
               :key="answer.id"
-              @click="emitSelectedOption(answer.isCorrect)"
+              @click="emitSelectedOption(answer.isCorrect, answer.label)"
               class="questions__option"
             >
               <span class="questions__definition">{{ answer.text }}</span>
