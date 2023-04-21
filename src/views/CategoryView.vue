@@ -46,6 +46,7 @@
       v-else
       :numberOfCorrectAnswers="numberOfCorrectAnswers"
       :questionsLength="category.questions.length"
+      :questions="category.questions"
     />
   </div>
   <div v-else>
