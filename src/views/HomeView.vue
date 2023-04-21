@@ -1,14 +1,13 @@
 <script setup>
   import Card from '../components/Card.vue'
   import { ref, computed } from 'vue';
-  import loadQuizData from '../api.js';
+  import loadedQuizData from '../api.js';
 
-  const quizData = await loadQuizData();
-  const quizzes = ref(quizData);
+  const quizzes = ref(loadedQuizData);
   const searchQuery = ref('');
 
   const filteredCards = computed(() => {
-    return quizzes.value = quizData.filter(quiz => quiz.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+    return quizzes.value = loadedQuizData.filter(quiz => quiz.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
   });
 </script>
 

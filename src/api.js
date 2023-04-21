@@ -6,9 +6,11 @@ const loadQuizData = async () => {
     const response = await fetch(URL);
     const result = await response.json();
     return result;
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(`ERROR: ${error}`);
   }
 }
 
-export default loadQuizData;
+const loadedQuizData = await loadQuizData();
+
+export default loadedQuizData;
