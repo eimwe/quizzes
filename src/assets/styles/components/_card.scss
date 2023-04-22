@@ -11,6 +11,9 @@
 
   &__image-container {
     height: 30vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__image {
