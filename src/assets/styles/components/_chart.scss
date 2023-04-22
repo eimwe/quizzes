@@ -1,0 +1,33 @@
+.chart {
+
+  &__title {
+    margin-block-end: 1em;
+    font-size: var(--fs-h2);
+    font-weight: 500;
+  }
+
+  &__header {
+    font-weight: 300;
+    background-color: var(--clr-blue-light);
+  }
+
+  &__line {
+
+    &:nth-child(even) {
+      background-color: var(--clr-bisque);
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--bg-search);
+    }
+  }
+
+  &__column {
+    padding: .25em;
+    border-inline-start: 1px solid var(--clr-content);
+
+    &:first-of-type {
+      border-inline-start-color: transparent;
+    }
+  }
+}
