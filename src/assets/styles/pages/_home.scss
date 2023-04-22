@@ -7,15 +7,3 @@
     margin-block-start: 2em;
   }
 }
-
-@media only screen and (min-width: 900px) {
-  .cards {
-
-    &__container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 392px));
-      gap: 1em;
-      margin-block-start: 2em;
-    }
-  } 
-}

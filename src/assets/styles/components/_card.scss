@@ -39,3 +39,21 @@
     font-weight: 300;
   }
 }
+
+@media only screen and (min-width: 600px) {
+  .card {
+    
+    &__image-container {
+      height: 25vh;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .card {
+    
+    &__image-container {
+      height: 30vh;
+    }
+  }
+}
