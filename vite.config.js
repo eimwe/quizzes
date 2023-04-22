@@ -15,6 +15,7 @@ export default defineConfig({
     devSourcemap: true,
   },
   build: {
+    target: 'esnext',
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
