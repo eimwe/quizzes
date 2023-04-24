@@ -1,8 +1,10 @@
 .search {
 
   &__bar {
+    max-width: 17ch;
     padding: .5em;
     border-radius: var(--br-rounded);
+    -webkit-border-radius: var(--br-rounded);
     font-size: var(--fs-small);
     line-height: var(--lead-small);
     color: var(--clr-grey);
@@ -12,6 +14,15 @@
 
     &:focus {
       outline-color: var(--clr-blue);
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .search {
+
+    &__bar {
+      max-width: unset;
     }
   }
 }
