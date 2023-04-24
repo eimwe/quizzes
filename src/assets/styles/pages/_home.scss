@@ -7,3 +7,13 @@
     margin-block-start: 2em;
   }
 }
+
+
+@media only screen and (min-width: 1200px) {
+  .cards {
+    
+    &__container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 390px));
+    }
+  }
+}
