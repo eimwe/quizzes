@@ -44,3 +44,10 @@ ol {
 table {
   border-collapse: collapse;
 }
+
+input[type=search] {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: var(--br-rounded);
+  -webkit-border-radius: var(--br-rounded);
+}
