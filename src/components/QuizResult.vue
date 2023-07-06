@@ -1,17 +1,10 @@
 <script setup>
-  import { RouterLink } from 'vue-router';
+import { toRefs } from 'vue'
+import { RouterLink } from 'vue-router'
 
-  const {
-    numberOfCorrectAnswers,
-    questionsLength,
-    questions,
-    answers
-    } = defineProps([
-     'numberOfCorrectAnswers',
-     'questionsLength',
-     'questions',
-     'answers'
-    ]);
+const props = defineProps(['numberOfCorrectAnswers', 'questionsLength', 'questions', 'answers'])
+
+const { numberOfCorrectAnswers, questionsLength, questions, answers } = toRefs(props)
 </script>
 
 <template>
@@ -20,7 +13,9 @@
       <p class="results__intro">Your results:</p>
       <strong class="results__total">{{ numberOfCorrectAnswers }}/{{ questionsLength }}</strong>
       <table class="chart results__key">
-        <caption class="chart__title">Answer keys:</caption>
+        <caption class="chart__title">
+          Answer keys:
+        </caption>
         <thead>
           <tr>
             <th class="chart__column chart__header">#</th>
@@ -36,13 +31,17 @@
               :key="answer.id"
               v-show="answer.id === question.id"
               class="chart__column"
-            >{{ answer.label }}</td>
+            >
+              {{ answer.label }}
+            </td>
             <td
               v-for="option in question.options"
               :key="option.id"
               v-show="option.isCorrect"
               class="chart__column"
-            >{{ option.label }}</td>
+            >
+              {{ option.label }}
+            </td>
           </tr>
         </tbody>
       </table>
