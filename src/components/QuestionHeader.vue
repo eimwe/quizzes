@@ -1,5 +1,7 @@
 <script setup>
-  const { quizProgress, barProgress } = defineProps(['quizProgress', 'barProgress']);
+import { toRefs } from 'vue'
+const props = defineProps(['quizProgress', 'barProgress'])
+const { quizProgress, barProgress } = toRefs(props)
 </script>
 
 <template>
