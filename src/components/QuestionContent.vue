@@ -1,10 +1,12 @@
 <script setup>
-  const { question } = defineProps(['question']);
-  const emit = defineEmits(['selectedOption']);
+import { toRefs } from 'vue'
+const props = defineProps(['question'])
+const { question } = toRefs(props)
+const emit = defineEmits(['selectedOption'])
 
-  const emitSelectedOption = (isCorrect, option) => {
-    emit('selectedOption', isCorrect, option);
-  }
+const emitSelectedOption = (isCorrect, option) => {
+  emit('selectedOption', isCorrect, option)
+}
 </script>
 
 <template>
