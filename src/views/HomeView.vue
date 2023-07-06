@@ -1,5 +1,5 @@
 <script setup>
-import QuestionCard from '../components/QuestionCard.vue'
+import QuizCard from '../components/QuizCard.vue'
 import { ref, computed } from 'vue'
 import loadedQuizData from '../api.js'
 
@@ -33,7 +33,7 @@ const filteredCards = computed(() => {
   <main class="cards">
     <div class="container">
       <div class="cards__container">
-        <QuestionCard :filteredCards="filteredCards" />
+        <QuizCard :filteredCards="filteredCards" />
       </div>
     </div>
   </main>
