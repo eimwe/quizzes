@@ -1,9 +1,9 @@
 <script setup>
 import QuizCard from '../components/QuizCard.vue'
 import { ref, computed } from 'vue'
-import loadedQuizData from '../api.js'
+import loadedData from '../api/fetchData'
 
-const quizzes = ref(loadedQuizData)
+const quizzes = ref(loadedData)
 const searchQuery = ref('')
 
 const filteredCards = computed(() => {

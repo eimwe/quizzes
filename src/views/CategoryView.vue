@@ -1,16 +1,14 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import loadedQuizData from '../api.js'
+import loadedData from '../api/fetchData'
 import QuestionContent from '../components/QuestionContent.vue'
 import QuestionHeader from '../components/QuestionHeader.vue'
 import QuizResult from '../components/QuizResult.vue'
 import NotFound from '../views/404View.vue'
 
 const categoryRoute = useRoute()
-const category = loadedQuizData.find(
-  (category) => category.id === parseInt(categoryRoute.params.id)
-)
+const category = loadedData.find((category) => category.id === parseInt(categoryRoute.params.id))
 const currentQuestionIndex = ref(0)
 const numberOfCorrectAnswers = ref(0)
 const numberOfAnswers = ref([])
