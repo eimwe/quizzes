@@ -1,25 +1,36 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import loadedData from '../api/fetchData'
+import getData from '../composables/getData'
 import QuestionContent from '../components/QuestionContent.vue'
 import QuestionHeader from '../components/QuestionHeader.vue'
 import QuizResult from '../components/QuizResult.vue'
+import QuizLoader from '../components/QuizLoader.vue'
 import NotFound from '../views/404View.vue'
 
+const { data, loader, load } = getData()
+
+load()
+
 const categoryRoute = useRoute()
-const category = loadedData.find((category) => category.id === parseInt(categoryRoute.params.id))
+
+const category = computed(() => {
+  return data.value.find((category) => category.id === parseInt(categoryRoute.params.id))
+})
+
 const currentQuestionIndex = ref(0)
 const numberOfCorrectAnswers = ref(0)
 const numberOfAnswers = ref([])
 const showResults = ref(false)
 
 const quizProgress = computed(() => {
-  return `${currentQuestionIndex.value}/${category.questions.length}`
+  return `${currentQuestionIndex.value}/${category.value.questions.length}`
 })
 
 const barProgress = computed(() => {
-  return parseInt(`${(currentQuestionIndex.value / category.questions.length) * 100}`).toFixed()
+  return parseInt(
+    `${(currentQuestionIndex.value / category.value.questions.length) * 100}`
+  ).toFixed()
 })
 
 const onOptionSelected = (isCorrect, option) => {
@@ -27,7 +38,7 @@ const onOptionSelected = (isCorrect, option) => {
     numberOfCorrectAnswers.value++
   }
 
-  if (category.questions.length - 1 === currentQuestionIndex.value) {
+  if (category.value.questions.length - 1 === currentQuestionIndex.value) {
     showResults.value = true
   }
 
@@ -56,6 +67,7 @@ const onOptionSelected = (isCorrect, option) => {
       :answers="numberOfAnswers"
     />
   </div>
+  <div v-else-if="loader" class="focused">Loading <QuizLoader /></div>
   <div v-else>
     <NotFound />
   </div>
