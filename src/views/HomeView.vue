@@ -3,15 +3,16 @@ import QuizCard from '../components/QuizCard.vue'
 import QuizLoader from '../components/QuizLoader.vue'
 import { ref, computed } from 'vue'
 import getData from '../composables/getData'
+import URL from '../api/config'
 
-const { data, error, loader, load } = getData()
+const { data: quizzes, error, loader, load } = getData()
 
-load()
+load(URL)
 
 const searchQuery = ref('')
 
 const filteredCards = computed(() => {
-  return data.value.filter((quiz) =>
+  return quizzes.value.filter((quiz) =>
     quiz.name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 })

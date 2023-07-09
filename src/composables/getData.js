@@ -1,15 +1,14 @@
 import { ref } from 'vue'
-import URL from '../api/config'
 
 const getData = () => {
   const data = ref([])
   const error = ref(null)
   const loader = ref(false)
 
-  const load = async () => {
+  const load = async (UrlToFetch) => {
     try {
       loader.value = true
-      const response = await fetch(URL)
+      const response = await fetch(UrlToFetch)
 
       if (!response.ok) {
         throw new Error('no data available')

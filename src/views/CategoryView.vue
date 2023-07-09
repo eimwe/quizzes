@@ -2,20 +2,21 @@
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import getData from '../composables/getData'
+import URL from '../api/config'
 import QuestionContent from '../components/QuestionContent.vue'
 import QuestionHeader from '../components/QuestionHeader.vue'
 import QuizResult from '../components/QuizResult.vue'
 import QuizLoader from '../components/QuizLoader.vue'
 import NotFound from '../views/404View.vue'
 
-const { data, loader, load } = getData()
+const { data: quizzes, loader, load } = getData()
 
-load()
+load(URL)
 
 const categoryRoute = useRoute()
 
 const category = computed(() => {
-  return data.value.find((category) => category.id === parseInt(categoryRoute.params.id))
+  return quizzes.value.find((category) => category.id === parseInt(categoryRoute.params.id))
 })
 
 const currentQuestionIndex = ref(0)
