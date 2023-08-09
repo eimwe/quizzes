@@ -4,6 +4,10 @@
   place-items: center;
   text-align: center;
 
+  &__container {
+    padding-block-end: 2em;
+  }
+
   &__intro {
     margin: 0;
     margin-block-end: 1em;
@@ -13,7 +17,7 @@
 
   &__total {
     display: block;
-    margin-block-end: .5em;
+    margin-block-end: 0.5em;
     font-size: var(--fs-results);
     font-weight: 700;
   }
