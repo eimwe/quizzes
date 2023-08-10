@@ -1,7 +1,7 @@
 .progress {
   min-height: 30px;
   border: 2px solid var(--clr-bisque);
-  border-radius: unset;
+  border-radius: var(--br-rounded);
   background-color: transparent;
 
   &::-webkit-progress-bar {
