@@ -1,5 +1,4 @@
 .chart {
-
   &__title {
     margin-block-end: 1em;
     font-size: var(--fs-h2);
@@ -12,7 +11,6 @@
   }
 
   &__line {
-
     &:nth-child(even) {
       background-color: var(--clr-bisque);
     }
@@ -23,11 +21,15 @@
   }
 
   &__column {
-    padding: .25em;
+    padding: 0.25em;
     border-inline-start: 1px solid var(--clr-content);
 
     &:first-of-type {
       border-inline-start-color: transparent;
+    }
+
+    &--incorrect {
+      background-color: var(--clr-error);
     }
   }
 }
