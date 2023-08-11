@@ -6,7 +6,7 @@
   --fs-h1: clamp(1.5rem, 2vw + 1rem, 2rem);
   --fs-h2: clamp(1.25rem, 2vw + 1rem, 1.5rem);
   --fs-content: clamp(1rem, 1vw + 1rem, 1.25rem);
-  --fs-small: clamp(.875rem, 1vw + 1rem, 1.125rem);
+  --fs-small: clamp(0.875rem, 1vw + 1rem, 1.125rem);
 
   // line-height
   --lead-content: 1.2;
@@ -14,16 +14,16 @@
   --lead-small: 1;
 
   // letter-spacing
-  --track-content: .2px;
-  --track-intro: .3px;
-
+  --track-content: 0.2px;
+  --track-intro: 0.3px;
 
   /* Colors */
 
   // text color
   --clr-blue: hsl(231 41% 43%);
-  --clr-blue-light: hsl(231 41% 43% / 0.2);
+  --clr-blue-light: hsl(211, 100%, 88%);
   --clr-bisque: hsl(32 100% 88%);
+  --clr-error: hsl(1 100% 88%);
   --clr-content: hsl(0 0% 20%);
   --clr-shadow: hsl(0 0% 0% / 0.1);
 
@@ -33,13 +33,11 @@
   /* Shadows */
   --shadow: 4px 4px 8px 2px var(--clr-shadow);
 
-
   /* Shapes */
 
   // border radius
   --br-rounded: 4px;
 
-  
   /* Timing */
   --delay: 300ms;
 }
