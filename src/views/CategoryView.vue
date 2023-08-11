@@ -47,7 +47,8 @@ const onOptionSelected = (isCorrect, option) => {
 
   numberOfAnswers.value.push({
     id: currentQuestionIndex.value,
-    label: option
+    label: option,
+    isCorrect: isCorrect
   })
 }
 </script>

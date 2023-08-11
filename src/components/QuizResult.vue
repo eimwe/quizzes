@@ -32,6 +32,7 @@ const { numberOfCorrectAnswers, questionsLength, questions, answers } = toRefs(p
                 :key="answer.id"
                 v-show="answer.id === question.id"
                 class="chart__column"
+                :class="{ 'chart__column--incorrect': !answer.isCorrect }"
               >
                 {{ answer.label }}
               </td>
